@@ -32,7 +32,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  Map<String, dynamic> json = {
+  String json = '''{
     "status": "success",
     "total": 2,
     "data": [
@@ -43,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
         "author": {
           "id": "a1",
           "name": "Renga",
-          "profilePic": "https://example.com/renga.png",
+          "profilePic": "https://example.com/renga.png"
         },
         "feed": {
           "postId": "p1",
@@ -53,17 +53,17 @@ class _MyHomePageState extends State<MyHomePage> {
           "author": {
             "id": "a1",
             "name": "Renga",
-            "profilePic": "https://example.com/renga.png",
+            "profilePic": "https://example.com/renga.png"
           },
           "comment": {
             "userId": "u1",
             "comment": "This is helpful!",
-            "timeStamp": "2024-10-12T10:15:00Z",
+            "timeStamp": "2024-10-12T10:15:00Z"
           },
           "isFeatured": true,
-          "likes": 150,
+          "likes": 150
         },
-        "is_active": true,
+        "is_active": true
       },
       {
         "feed_id": "b2",
@@ -71,15 +71,15 @@ class _MyHomePageState extends State<MyHomePage> {
         "published_at": null,
         "author": null,
         "feed": null,
-        "is_active": false,
-      },
-    ],
-  };
+        "is_active": false
+      }
+    ]
+  }''';
   late BlogFeed blogFeed;
 
   @override
   void initState() {
-    blogFeed = BlogFeed.fromJson(json);
+    blogFeed = BlogFeed.fromJson(jsonDecode(json));
     print(jsonEncode(blogFeed.toJson()));
     super.initState();
   }

@@ -7,7 +7,7 @@ part 'blog.g.dart';
 @JsonSerializable()
 class Blog {
   @JsonKey(name: "feed_id")
-  final String feedId;
+  final String? feedId;
   final String? title;
   @JsonKey(fromJson: _dateFromJson, toJson: _dateToJson, name: "published_at")
   final DateTime? publishedAt;

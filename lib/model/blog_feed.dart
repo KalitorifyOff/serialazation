@@ -5,7 +5,8 @@ part 'blog_feed.g.dart';
 
 @JsonSerializable()
 class BlogFeed {
-  final String status;
+  final String? status;
+  @JsonKey(defaultValue: 0)
   final int total;
   @JsonKey(name: 'data', defaultValue: [])
   final List<Blog> blogs;

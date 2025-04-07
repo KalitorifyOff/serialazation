@@ -7,7 +7,7 @@ part of 'blog.dart';
 // **************************************************************************
 
 Blog _$BlogFromJson(Map<String, dynamic> json) => Blog(
-  feedId: json['feed_id'] as String,
+  feedId: json['feed_id'] as String?,
   title: json['title'] as String?,
   publishedAt: Blog._dateFromJson(json['published_at'] as String?),
   author:

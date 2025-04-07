@@ -7,13 +7,14 @@ part 'post.g.dart';
 
 @JsonSerializable()
 class Post {
-  final String postId;
-  final String title;
-  final String content;
+  final String? postId;
+  final String? title;
+  final String? content;
   @JsonKey(defaultValue: [])
-  final List<String> tags;
-  final Author author;
-  final Comment comment;
+  final List<String>? tags;
+  final Author? author;
+  final Comment? comment;
+  @JsonKey(defaultValue: false)
   final bool isFeatured;
   @JsonKey(defaultValue: 0)
   final int likes;

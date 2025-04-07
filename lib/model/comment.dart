@@ -4,14 +4,14 @@ part 'comment.g.dart';
 
 @JsonSerializable()
 class Comment {
-  final String userId;
-  final String comment;
+  final String? userId;
+  final String? comment;
   @JsonKey(fromJson: _dateFromJson, toJson: _dateToJson)
-  final DateTime? timestamp;
+  final DateTime? timeStamp;
   Comment({
     required this.userId,
     required this.comment,
-    required this.timestamp,
+    required this.timeStamp,
   });
 
   factory Comment.fromJson(Map<String, dynamic> json) =>

@@ -7,8 +7,8 @@ part of 'blog_feed.dart';
 // **************************************************************************
 
 BlogFeed _$BlogFeedFromJson(Map<String, dynamic> json) => BlogFeed(
-  status: json['status'] as String,
-  total: (json['total'] as num).toInt(),
+  status: json['status'] as String?,
+  total: (json['total'] as num?)?.toInt() ?? 0,
   blogs:
       (json['data'] as List<dynamic>?)
           ?.map((e) => Blog.fromJson(e as Map<String, dynamic>))

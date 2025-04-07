@@ -7,14 +7,20 @@ part of 'post.dart';
 // **************************************************************************
 
 Post _$PostFromJson(Map<String, dynamic> json) => Post(
-  postId: json['postId'] as String,
-  title: json['title'] as String,
-  content: json['content'] as String,
+  postId: json['postId'] as String?,
+  title: json['title'] as String?,
+  content: json['content'] as String?,
   tags:
       (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList() ?? [],
-  author: Author.fromJson(json['author'] as Map<String, dynamic>),
-  comment: Comment.fromJson(json['comment'] as Map<String, dynamic>),
-  isFeatured: json['isFeatured'] as bool,
+  author:
+      json['author'] == null
+          ? null
+          : Author.fromJson(json['author'] as Map<String, dynamic>),
+  comment:
+      json['comment'] == null
+          ? null
+          : Comment.fromJson(json['comment'] as Map<String, dynamic>),
+  isFeatured: json['isFeatured'] as bool? ?? false,
   likes: (json['likes'] as num?)?.toInt() ?? 0,
 );
 
