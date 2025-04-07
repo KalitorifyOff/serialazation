@@ -1,7 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
-import 'package:serilazation/model/author.dart';
-import 'package:serilazation/model/comment.dart';
+import 'package:serilazation/model/example1/author.dart';
+import 'package:serilazation/model/example1/comment.dart';
 
 part 'post.g.dart';
 

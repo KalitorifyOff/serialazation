@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:serilazation/model/author.dart';
-import 'package:serilazation/model/post.dart';
+import 'package:serilazation/model/example1/author.dart';
+import 'package:serilazation/model/example1/post.dart';
 
 part 'blog.g.dart';
 

@@ -1,7 +1,8 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:serilazation/model/blog_feed.dart';
+import 'package:serilazation/model/example1/blog_feed.dart';
+import 'package:serilazation/model/example2/user.dart';
 
 void main() {
   runApp(const MyApp());
@@ -77,10 +78,30 @@ class _MyHomePageState extends State<MyHomePage> {
   }''';
   late BlogFeed blogFeed;
 
+  String user = '''
+  {
+  "user_id": "u123",
+  "name": "Renga",
+  "joined_at": "2024-10-12T10:00:00Z",
+  "optionalBio": "Flutter Dev",
+  "isActive": true,
+  "address": {
+    "street": "123 Main St",
+    "city": "Chennai"
+  },
+  "role": "admin"
+}
+''';
+  late User userModel;
+
   @override
   void initState() {
     blogFeed = BlogFeed.fromJson(jsonDecode(json));
     print(jsonEncode(blogFeed.toJson()));
+
+    userModel = User.fromJson(jsonDecode(user));
+    print(userModel.role.name);
+    print(jsonEncode(userModel.toJson()));
     super.initState();
   }
 

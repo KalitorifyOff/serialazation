@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:serilazation/model/blog.dart';
+import 'package:serilazation/model/example1/blog.dart';
 
 part 'blog_feed.g.dart';
 
